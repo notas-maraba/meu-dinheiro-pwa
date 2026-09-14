@@ -1,5 +1,5 @@
-const CACHE='meu-dinheiro-mobile-v4';
-const FILES=['./','./index.html','./style.css','./app.js','./manifest.webmanifest','./icon-192.png','./icon-512.png','./icon.svg'];
+const CACHE='meu-dinheiro-cloud-v5';
+const FILES=['./','./index.html','./style.css','./cloud.css','./cloud.js','./firebase-config.js','./app.js','./manifest.webmanifest','./icon-192.png','./icon-512.png','./icon.svg'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('meu-dinheiro-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{

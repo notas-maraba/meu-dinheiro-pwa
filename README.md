@@ -15,7 +15,7 @@ Receitas e despesas, contas recorrentes, parcelas, categorias, vencimentos, paga
 
 ## Dados e premissas
 
-Os dados ficam no localStorage deste navegador e aparelho, sem sincronização. Faça backups nos Ajustes; limpar dados do navegador remove os registros. Importar substitui os registros após confirmação.
+Entre com Google usando a mesma conta em todos os aparelhos. O orçamento é salvo no Cloud Firestore, em budgets/{uid}, com regras que permitem acesso apenas ao dono autenticado. Uma cópia local por usuário preserva alterações pendentes. Aguarde “Salvo na conta” antes de fechar; falhas e conflitos são informados. Faça backups nos Ajustes. Importar substitui o orçamento da conta após confirmação.
 
 O aplicativo público começa sem receitas e despesas. Cadastre seus valores ou importe um backup privado. O planejamento suporta recebimentos nos dias 1 e 20. IPVA/licenciamento tem início em maio e prazo em setembro, com valor editável.
 
@@ -37,4 +37,4 @@ Abra http://localhost:8080. A instalação e o service worker precisam de HTTPS 
 
 GitHub Pages: branch `main`, pasta `/ (root)`. Todos os caminhos são relativos e funcionam no subdiretório do projeto. Incremente a versão do cache em `sw.js` ao publicar alterações.
 
-O site e o código são públicos. Nenhum orçamento pessoal é incluído no código público. Os registros feitos ou importados no app ficam apenas no navegador e não são enviados ao GitHub.
+O site e o código são públicos. Nenhum orçamento pessoal é incluído no código público. Os registros feitos ou importados no app são enviados ao Firebase da conta autenticada, nunca ao GitHub. firebase-config.js contém somente a configuração pública do app web; a proteção é feita por firestore.rules, que deve ser publicada no console. Login requer internet. O modo offline usa a cópia local da conta e depende dos recursos já carregados.
