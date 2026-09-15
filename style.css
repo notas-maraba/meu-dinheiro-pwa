@@ -119,7 +119,7 @@ html{--fz-body:22px;--fz-button:20px;--fz-title:34px;--fz-heading:26px;--fz-subh
 html[data-app-zoom="115"]{--fz-body:25px;--fz-button:23px;--fz-title:39px;--fz-heading:30px;--fz-subheading:24px;--fz-small:19px;--fz-nav:18px;--fz-icon:40px;--control-height:70px;--nav-height:106px}
 html[data-app-zoom="130"]{--fz-body:28px;--fz-button:26px;--fz-title:44px;--fz-heading:34px;--fz-subheading:28px;--fz-small:21px;--fz-nav:19px;--fz-icon:44px;--control-height:76px;--nav-height:114px}
 body{font-size:var(--fz-body);line-height:1.45}
-.shell{width:100vw;max-width:none;margin:0;padding:18px 12px calc(146px + env(safe-area-inset-bottom))}
+.shell{width:100%;max-width:none;margin:0;padding:18px 12px calc(146px + env(safe-area-inset-bottom))}
 .eyebrow{font-size:15px;letter-spacing:1.4px}
 header h1{font-size:var(--fz-title);line-height:1.15;margin-top:8px}
 .header-actions{gap:10px;margin-top:16px}
@@ -148,7 +148,7 @@ h3{font-size:var(--fz-subheading);line-height:1.3}
 .text-button,.row-head .text-button{font-size:19px;min-height:56px}
 label{font-size:19px}
 .check input{width:27px;height:27px}
-#mobile-nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:fixed;inset:auto 0 0;width:100vw;gap:0;padding:8px 3px calc(8px + env(safe-area-inset-bottom))}
+#mobile-nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:fixed;inset:auto 0 0;width:100%;gap:0;padding:8px 3px calc(8px + env(safe-area-inset-bottom))}
 #mobile-nav a{width:100%;max-width:none;min-height:var(--nav-height);font-size:var(--fz-nav);font-weight:650;gap:8px;padding:10px 1px}
 #mobile-nav a span{font-size:var(--fz-icon)}
 footer{font-size:15px}
