@@ -114,7 +114,7 @@ dialog{width:calc(100% - 24px);max-width:560px;max-height:calc(100dvh - 24px);pa
 @media(max-width:340px){#mobile-nav a{font-size:12px}.shell{padding-left:12px;padding-right:12px}.card{padding:14px}.stat-value{font-size:20px}}
 
 /* Escala confortável para uso diário no celular. */
-@media(max-width:900px){
+@media(max-width:900px),(pointer:coarse) and (hover:none){
 body{font-size:19px;line-height:1.45}
 .shell{width:100vw;max-width:none;margin:0;padding:18px 12px calc(146px + env(safe-area-inset-bottom))}
 .eyebrow{font-size:13px;letter-spacing:1.5px}
@@ -145,8 +145,8 @@ h3{font-size:19px;line-height:1.3}
 .text-button,.row-head .text-button{font-size:17px;min-height:50px}
 label{font-size:17px}
 .check input{width:27px;height:27px}
-#mobile-nav{padding:8px 3px calc(8px + env(safe-area-inset-bottom))}
-#mobile-nav a{min-height:86px;font-size:15px;gap:7px;padding:9px 1px}
+#mobile-nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:fixed;inset:auto 0 0;width:100vw;gap:0;padding:8px 3px calc(8px + env(safe-area-inset-bottom))}
+#mobile-nav a{width:100%;max-width:none;min-height:86px;font-size:15px;gap:7px;padding:9px 1px}
 #mobile-nav a span{font-size:32px}
 footer{font-size:15px}
 dialog{width:calc(100% - 16px);padding:20px 16px}
@@ -154,7 +154,7 @@ dialog{width:calc(100% - 16px);padding:20px 16px}
 }
 
 /* O computador volta a usar a largura e a navegação lateral próprias. */
-@media(min-width:901px){
+@media(min-width:901px) and (hover:hover) and (pointer:fine){
 aside{display:block;width:238px;padding:34px 23px}
 .shell{width:auto;max-width:1600px;margin-left:238px;margin-right:0;padding:38px 44px}
 header{display:flex;align-items:center;justify-content:space-between;margin-bottom:30px}
