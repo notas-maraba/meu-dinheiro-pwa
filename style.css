@@ -114,9 +114,9 @@ dialog{width:calc(100% - 24px);max-width:560px;max-height:calc(100dvh - 24px);pa
 @media(max-width:340px){#mobile-nav a{font-size:12px}.shell{padding-left:12px;padding-right:12px}.card{padding:14px}.stat-value{font-size:20px}}
 
 /* Escala confortável para uso diário no celular. */
-@media(max-width:700px){
+@media(max-width:900px){
 body{font-size:19px;line-height:1.45}
-.shell{padding:18px 12px calc(146px + env(safe-area-inset-bottom))}
+.shell{width:100vw;max-width:none;margin:0;padding:18px 12px calc(146px + env(safe-area-inset-bottom))}
 .eyebrow{font-size:13px;letter-spacing:1.5px}
 header h1{font-size:31px;line-height:1.15;margin-top:8px}
 .header-actions{gap:10px;margin-top:16px}
@@ -151,4 +151,27 @@ label{font-size:17px}
 footer{font-size:15px}
 dialog{width:calc(100% - 16px);padding:20px 16px}
 .dialog-head h2{font-size:24px}
+}
+
+/* O computador volta a usar a largura e a navegação lateral próprias. */
+@media(min-width:901px){
+aside{display:block;width:238px;padding:34px 23px}
+.shell{width:auto;max-width:1600px;margin-left:238px;margin-right:0;padding:38px 44px}
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:30px}
+header h1{font-size:30px}
+.header-actions{margin-top:0;flex-wrap:nowrap;align-items:center}
+.header-actions input{width:175px;flex:none}
+.header-actions button{flex:none;white-space:nowrap}
+.hero{display:flex;padding:30px 34px}
+.hero svg{display:block;width:210px}
+.grid{grid-template-columns:1.4fr 1fr;gap:22px}
+.goal-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+.stats{grid-template-columns:repeat(3,1fr);gap:18px}
+.stats .card{display:block;padding:23px}
+.stats .card .stat-value{margin:13px 0 7px}
+.stats .card small{display:block}
+.transaction{display:flex;align-items:center;gap:13px;padding:16px 0}
+.transaction .value{margin:0;text-align:right;white-space:nowrap}
+.transaction .actions{display:flex;justify-content:flex-end}
+#mobile-nav{display:none}
 }
